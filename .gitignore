@@ -1,0 +1,4 @@
+.env
+ignorefolder
+node_modules
+package-lock.json

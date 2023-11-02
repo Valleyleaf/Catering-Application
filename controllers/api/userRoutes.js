@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+// const { User } = require('../../models');
 // models don't exist yet. We need to create these.
 
 router.post('/', async (req, res) => {

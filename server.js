@@ -41,7 +41,7 @@ app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'assets')));
 // app being express, this sets out static directory return. We may have to change this down the line to ensure 
 // we hit main.handlebars
 

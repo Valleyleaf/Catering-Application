@@ -1,8 +1,10 @@
 // NPM items and Middleware here
 const express = require('express');
 const eHandleBars = require('express-handlebars');
-const path = require('path');
 const session = require('express-session');
+
+const path = require('path');
+
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const PLACEHOLDER = require('connect-session-sequelize')(session.Store);
@@ -17,7 +19,6 @@ const sess = {
   secret: 'Super secret secret',
   cookie: {
     maxAge: 300000,
-    httpOnly: true,
     secure: false,
     sameSite: 'strict',
   },
@@ -36,10 +37,11 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(routes); //This is allowing us to access our index in our controllers folder -JKD
 // app being express, this sets out static directory return. We may have to change this down the line to ensure 
 // we hit main.handlebars
 
-app.use(require('./controllers/'));
+
 // This just sets up our routers via controllers.
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));

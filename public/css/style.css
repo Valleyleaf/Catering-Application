@@ -8,38 +8,88 @@
     
     }
     
+    * {
+        padding: 0;
+        margin: 0;
+    }
     /* Basic */
+    a {
+        font: bolder;
+        font-size: large;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
     ul {
         list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        margin: 30px;
+        
+    }
+
+    h1 {
+        margin: 60px;
+    }
+
+    li {
+       
+        margin: 30px;
     }
 
     body{
-        background-color: var(--darkgrey);
-        font-family: var(--standard-font);
+        /* background-color: var(--darkgrey); */
+        /* font-family: var(--standard-font); */
         margin: 0;
         padding: 0;
         z-index: 0;
     }
     
-    header{
-        background: linear-gradient(to right, var(--black),rgba(124, 124, 124, 0) 100% );
+    header {
+        background-color: lightblue;
+        
         
         display: flex;
         flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
         width: 100%;
         height: 150px;
         z-index: 2;
     }
     
     nav{
-        /* background-image: linear-gradient(to left, var(--darkgrey), var(--black));
-        font-size: small;
-        color: var(--darkgrey);
-        padding: 0px 20px 0px 20px;
-        justify-content: flex-end;
-        align-items: flex-end; */
+       border-color: solid black;
+    }
+
+    section{
+        background-color: var(--white);
+        width: 800px;
+        height: 500px;
+        border-radius: 5px;
+        text-align: left;
+        margin: 50px 10px 15px 10px;
     }
     
+
+   
+    
+    button{
+        text-align: center;
+        line-height: 0,5;
+        width: 90px;
+        height: 40px;
+        border-radius: 70px;
+        margin: 30px;
+        background-color: var(--darkgrey);
+    }
+
+    article{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+        background: linear-gradient( var(--black), var(--darkgrey) 100% );
+        background-size:auto;
+    }
     /* Classes */
     
     .flexbox-row{
@@ -127,15 +177,7 @@
         transform: scale(1.1) rotate(-15deg);
     }
     
-    button{
-        text-align: center;
-        line-height: 0,5;
-        width: 90px;
-        height: 40px;
-        border-radius: 70px;
-        margin: 30px;
-        background-color: var(--darkgrey);
-    }
+  
     
     button:hover{
         background: linear-gradient( var(--black), var(--darkgrey) 100% );
@@ -149,14 +191,7 @@
         margin: 20px;
     }
     
-    article{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: left;
-        background: linear-gradient( var(--black), var(--darkgrey) 100% );
-        background-size:auto;
-    }
+   
     
     .articleimage{
         display: block;
@@ -182,25 +217,7 @@
         width: 80%;
     }
     
-    section{
-        background-color: var(--white);
-        width: 800px;
-        height: 500px;
-        border-radius: 5px;
-        text-align: left;
-        margin: 50px 10px 15px 10px;
-    }
     
-
-    
-    footer{
-        background-color: var(--white);
-        width: 100%;
-        margin: 160px 0px 0px 0px;
-        height: 150px;
-        background-image: linear-gradient( var(--darkgrey), var(--black));
-    
-    }
     
     
     @media screen and (max-width: 980px){

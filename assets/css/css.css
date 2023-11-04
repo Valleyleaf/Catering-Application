@@ -6,8 +6,6 @@
     --metalic: #272727;
     --standard-font: arial, Helvetica, sans-serif;
     --white: #fcfcfc;
-    --dashpurple: #eeb2fa;
-    --harshred: #881c1c;
     --black: #000000;
     
     }
@@ -23,9 +21,8 @@
     }
     
     header{
-        background: linear-gradient(to right, var(--black),rgba(255, 0, 0, 0) 100% );
+        background: linear-gradient(to right, var(--black),rgba(124, 124, 124, 0) 100% );
         display: flex;
-    
         width: 100%;
         height: 150px;
         z-index: 2;
@@ -38,8 +35,6 @@
         padding: 0px 20px 0px 20px;
         justify-content: flex-end;
         align-items: flex-end;
-        border-top: 2px solid var(--harshred);
-        border-bottom: 2px solid var(--harshred);
     }
     
     /* Classes */
@@ -99,7 +94,6 @@
         font-size: 50px;
         width: 30%;
         margin: 15px;
-    
     }
     
     
@@ -109,7 +103,6 @@
         width: 100px;
         height: 150px;
         border-radius: 5%;
-        border-color: var(--harshred);
         background-repeat: no-repeat;
         float: right;
     
@@ -117,7 +110,6 @@
     
     .nav-item{
         display: inline-block;
-        border: 1px solid var(--harshred);
         margin: 5px;
         text-decoration: none;
     }
@@ -125,18 +117,7 @@
     .padding{
         padding: 5px;
     }
-    
-    img{
-        width: 100%;
-        height: 100%;
-    }
-    
-    /* Below are my buttons for my header and Footer*/
-    .social-img{
-        width: 50px;
-        height: 50px;
-    }
-    
+
     .social-img:hover{
         width: 50px;
         height: 50px;

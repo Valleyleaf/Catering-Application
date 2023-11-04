@@ -12,7 +12,6 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const hbs = eHandleBars.create({});
-// ------------------------------
 
 const sess = {
   secret: 'Super secret secret',
@@ -24,15 +23,10 @@ const sess = {
   },
   resave: false,
   saveUninitialized: true,
-  // store: new SequelizeStore({
-  //   db: sequelize
-  // })
 };
 
 app.use(session(sess));
 // Sets up user session and stores local memory.
-
-app.get()
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');

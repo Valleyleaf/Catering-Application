@@ -1,3 +1,5 @@
+    // Most of this code makes no sense for our project and needs to be refactored or straight up abandoned.
+
 const newFormHandler = async (event) => {
     event.preventDefault();
   
@@ -45,3 +47,4 @@ const newFormHandler = async (event) => {
   document
     .querySelector('.project-list')
     .addEventListener('click', delButtonHandler);
+

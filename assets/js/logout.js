@@ -12,3 +12,4 @@ const logout = async () => {
   };
   
   document.querySelector('#logout').addEventListener('click', logout);
+  // Log out function. Forces the user to return to / and removes the users content from the website.

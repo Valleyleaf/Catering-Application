@@ -50,5 +50,5 @@ User.init(
     modelName: 'user',
   }
 );
-
+// User model. Used to create users. Amazing I know.
 module.exports = User;

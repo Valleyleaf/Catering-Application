@@ -11,10 +11,6 @@ router.use('/', test);  // This allows us to use our homeroutes js script  -JKD
 
 router.use('/api', apiRoutes);
 
-
-
-
-
 module.exports = router;
 
 //This is boilerplate level of code. leave it as is.

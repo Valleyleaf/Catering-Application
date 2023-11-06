@@ -7,8 +7,8 @@ const path = require('path');
 
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
-const PLACEHOLDER = require('connect-session-sequelize')(session.Store);
-
+// const PLACEHOLDER = require('connect-session-sequelize')(session.Store);
+// AD: Just commiting out the above until we know what to use it for.
 
 const app = express();
 const PORT = process.env.PORT || 3001;

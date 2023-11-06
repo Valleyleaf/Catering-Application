@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const apiRoutes = require('./api');
-const homeRoutes = require('./homeRoutes.js');
+const homeRoutes = require('./homeroutes.js');
 const main = '../../views/layouts/main.handlebars'
+// AD: Fixed a spelling error where homeroutes was spelled homeRoutes.
 
 const test = (req, res, next) => {  //I did it ths way for now to work on the handlebars, will configure it later to use homeroutes -JKD
     res.render('homepage');

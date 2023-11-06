@@ -53,13 +53,13 @@ const seedRestaurants = async () => {
   try {
     await sequelize.sync({force:true}); // sync the models with the database
     for (const data of seedData) {
-      const restuarant = await restuarants.create ({
+      const restaurants = await restaurants.create ({
           name:data.name,
           cuisine:data.cuisine,
       });
         for ( const item of data.menuItems) {
             await menu.create ({
-                restuarant_id:restuarant.id,
+              restaurants_id:restaurants.id,
                 item_name:item,
             });
         }
@@ -70,3 +70,5 @@ const seedRestaurants = async () => {
   }
 };
 module.exports = seedRestaurants;
+
+// AD: Fixed spelling errors in restaurants.

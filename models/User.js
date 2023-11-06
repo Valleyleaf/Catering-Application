@@ -10,7 +10,6 @@ class User extends Model {
 
 User.init(
   {
-    //define an id column
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -51,5 +50,6 @@ User.init(
     modelName: 'user',
   }
 );
-// User model. Used to create users. Amazing I know.
+// User model. Used to create users. Amazing I know. Go through this to ensure this makes sense with what will be needed
+//for our users.
 module.exports = User;

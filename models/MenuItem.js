@@ -19,7 +19,7 @@ MenuItem.init(
         type: DataTypes.INTEGER,
         allownull:false,
         references: { // foreign key relationship with the restaurants table
-            model: 'restuarants',
+            model: 'restaurants',
             key:'id'
         },
         },
@@ -31,3 +31,5 @@ MenuItem.init(
     });
 
 module.exports= MenuItem;
+
+// AD: Fixed spelling error in resturants

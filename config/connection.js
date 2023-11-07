@@ -1,8 +1,8 @@
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
+console.log('testing', process.env.DB_NAME)
 let sequelize;
-
 if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
@@ -17,7 +17,6 @@ if (process.env.JAWSDB_URL) {
     }
   );
 }
-
 module.exports = sequelize;
 
 // Basic connections file for env usage. Keep this.

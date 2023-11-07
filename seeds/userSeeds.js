@@ -1,9 +1,5 @@
-
-//seeding script for user data using sequelize
-
 const { User } =require('../models');
-
-const userData = [    
+const userData = [
             {
               "name": "Sal",
               "email": "sal@hotmail.com",
@@ -20,7 +16,5 @@ const userData = [
               "password": "password12345"
             }
           ]
-
 const seedUsers = () => User.bulkCreate(userData);
 module.exports = seedUsers;
-    

@@ -1,7 +1,7 @@
-const User = require('./user');
+const User = require('./User');
 const MenuItem = require('./MenuItem');
 const Restaurants =require('./Restaurants')
-const Comment = require('./comment')
+const Comment = require('./Comment')
 
 //define association
 User.hasMany(MenuItem, {

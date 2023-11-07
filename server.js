@@ -2,11 +2,12 @@
 const express = require('express');
 const eHandleBars = require('express-handlebars');
 const session = require('express-session');
-
 const path = require('path');
-
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+
 // const PLACEHOLDER = require('connect-session-sequelize')(session.Store);
 // AD: Just commiting out the above until we know what to use it for.
 
@@ -15,15 +16,15 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = eHandleBars.create({});
 
+
 const sess = {
   secret: 'Super secret secret',
-  cookie: {
-    maxAge: 300000,
-    secure: false,
-    sameSite: 'strict',
-  },
+  cookie: {},
   resave: false,
   saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
 };
 
 app.use(session(sess));

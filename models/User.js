@@ -47,7 +47,7 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
+    modelName: 'users',
   }
 );
 // User model. Used to create users. Amazing I know. Go through this to ensure this makes sense with what will be needed

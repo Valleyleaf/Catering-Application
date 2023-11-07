@@ -1,23 +1,24 @@
+// const seedUsers = require('./userSeeds');
+// const seedRestaurants = require('./seedRestarurants');
+// const seedComment = require('./commentSeed');
+const {User, Restaurants, MenuItem, Comment} = require('../models')
+
 const seedUsers = require('./userSeeds');
-const seedRestaurants = require('./seedRestarurants');
+const seedRestaurants = require('./seedRestaurants');
 const seedComment = require('./commentSeed');
-
 const sequelize = require('../config/connection');
-
 const seedAll = async() => {
+    // add try and catch later
     await sequelize.sync({force: true});
     console.log('\n----------------Database synced---------------\n');
 
-    await seedUsers();
-    console.log('\n----------------users seeded-------------\n');
-
     await seedRestaurants();
-    console.log('\n----------------Restaurants/menu  seeded-------------\n');
+    console.log('\n----------------Restuarants synced---------------\n');
 
     await seedComment();
-    console.log('\n----------------comments  seeded-------------\n');
+    console.log('\n----------------Comments synced---------------\n');
+    
+    await seedUsers();
     process.exit(0);
-
 };
-
 seedAll();

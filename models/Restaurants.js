@@ -19,6 +19,13 @@ Restaurants.init(
         cuisine: {
             type:DataTypes.STRING,
             allowNull:false,
+        },
+        restaurant_id: {
+            type:DataTypes.INTEGER,
+            references: {
+                model:'menu',
+                key:'id'
+            }
         }
     },
 {

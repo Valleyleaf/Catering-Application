@@ -1,12 +1,13 @@
 const router = require('express').Router();
 const userRoutes = require('./userRoutes');
-const projectRoutes = require('./projectRoutes');
+const commentRoutes = require('./commentRoutes');
+const menuRoutes = require('./menuRoutes')
 
 router.use('/users', userRoutes);
-router.use('/projects', projectRoutes);
-// Right here
+// router.use('/commentRoutes', commentRoutes);
+router.use('/menuRoutes', menuRoutes);
 
 module.exports = router;
 
 
-// This can be considered the main route file. All other routes should be referenced in here.
+// This can be considered the main api route file. All other routes should be referenced in here.

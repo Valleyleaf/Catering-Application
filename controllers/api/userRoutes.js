@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const { User } = require('../../models');
-// models don't exist yet. We need to create these.
 
 router.post('/', async (req, res) => {
   try {
@@ -16,8 +15,7 @@ router.post('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
-// We can use the above for multible different things. I think a copy of this route named 'mainroute' or something
-//would be good to post initial handlebar.
+
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -45,7 +43,6 @@ router.post('/login', async (req, res) => {
     res.status(400).json(err);
   }
 });
-//Above can be used as is.
 
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
@@ -56,5 +53,7 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
-//Above can be used as is.
+
 module.exports = router;
+
+// This is fine, dont touch it.

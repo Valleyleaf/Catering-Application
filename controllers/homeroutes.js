@@ -15,3 +15,5 @@ router.get('/', async (req,res) => {
 }
    
 })
+
+// Store local data in the above, cookies, login validation etc.

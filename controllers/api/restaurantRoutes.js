@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const {model} = require('../../models');
 
-router.post('/Restaurant', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const restaurantData = await model.getRestaurant(); 
     if (!restaurantData) {

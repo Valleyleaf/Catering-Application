@@ -4,8 +4,8 @@ const commentRoutes = require('./commentRoutes');
 const menuRoutes = require('./menuItemsRoutes')
 
 router.use('/users', userRoutes);
-router.use('/commentRoutes', commentRoutes);
-router.use('/menuRoutes', menuRoutes);
+router.use('/comments', commentRoutes);
+router.use('/menus', menuRoutes);
 
 module.exports = router;
 

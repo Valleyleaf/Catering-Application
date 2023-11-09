@@ -22,14 +22,24 @@ Future features will include the option to customize your profile, additional pa
 Deployed on HEROKU.
 
 ## 📷Screenshots
+Wireframe 1:
+![project_2_home_page drawio__1_](https://github.com/Valleyleaf/Catering-Application/assets/137734906/fcbbe89c-30f6-4c8f-bbc1-5806f26f6a59)
+
+Wireframe 2:
+![Package Example drawio (1)](https://github.com/Valleyleaf/Catering-Application/assets/137734906/e94d374f-9b25-490e-a64a-a14356ac4528)
+
+Package Example Image:
+![Package-5](https://github.com/Valleyleaf/Catering-Application/assets/137734906/9014b429-333e-4999-a684-2f3bedb42b76)
+
 
 ## ✅Dependancies
 This depends on Express.js, Node.js and Heroku.
 
 ## 🙌Contributers
-https://github.com/MagicianJoshua
-https://github.com/blastty
-https://github.com/Sabinkthapa
+🎩 https://github.com/MagicianJoshua
+💥 https://github.com/blastty
+🍪 https://github.com/Sabinkthapa
+🍃 https://github.com/Valleyleaf
 
 
 

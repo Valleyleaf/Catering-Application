@@ -4,7 +4,7 @@ const seedData = [
     {
         name: 'The Italiano',
         cuisine: 'Italian',
-        imageFilename:'images/Package-1.jpg',
+        imageFilename:'/images/Package-1.jpg',
         menuItems: [
           'Spaghetti Carbonara',
           'Margherita Pizza',
@@ -14,7 +14,7 @@ const seedData = [
       {
         name: 'Greek Vacation',
         cuisine: 'Greek',
-        imageFilename:'images/Package-2.jpg',
+        imageFilename:'/images/Package-2.jpg',
         menuItems: [
           'Gyros with Tzatziki',
           'Moussaka',
@@ -24,7 +24,7 @@ const seedData = [
       {
         name: 'Classic American',
         cuisine: 'American',
-        imageFilename:'images/Package-3.jpg',
+        imageFilename:'/images/Package-3.jpg',
         menuItems: [
           'Clam Chowder',
           'Philly Cheesesteak',
@@ -34,7 +34,7 @@ const seedData = [
       {
         name: 'Tastes of the East',
         cuisine: 'Japanese',
-        imageFilename:'images/Package-4.jpg',
+        imageFilename:'/images/Package-4.jpg',
         menuItems: [
           'Sushi Platter',
           'Ramen Noodle Soup',
@@ -43,7 +43,7 @@ const seedData = [
       {
         name: 'Mexican package',
         cuisine: 'Mexican',
-        imageFilename:'images/Package-5.jpg',
+        imageFilename:'/images/Package-5.jpg',
         menuItems: [
           'Tacos (Choice of Meat)',
           'Enchiladas',
@@ -54,7 +54,7 @@ const seedData = [
       {
         name: 'Spices of delight',
         cuisine: 'Indian',
-        imageFilename:'images/Package-6.png',
+        imageFilename:'/images/Package-6.png',
         menuItems: [
           'Butter Chicken',
           'samosas',

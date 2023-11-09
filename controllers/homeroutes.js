@@ -39,9 +39,8 @@ router.get('/package/:id' , async (req,res) => {
   try{
     const data = await Restaurants.findByPk(req.params.id)
     let rest = data.get({plain:true})
-    //firstRest:rests[0] could be use
-    res.render('package' , {rest} );
-    console.log("id",rest)
+    let restString = JSON.stringify(rest,null,2);
+    res.render('package' , {rest: rest } );
   }catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -54,6 +53,10 @@ router.get('/profile' , (req,res) => {
 
 router.get("/login" , async (req,res) => {
     res.render('login')
+})
+
+router.get('/cart' , async (req,res) => {
+  res.render('cart')
 })
 
 module.exports = router;

@@ -7,6 +7,8 @@ const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+const PasswordRevealer = require('password-revealer');
+// password revealer middleware RB
 
 // const PLACEHOLDER = require('connect-session-sequelize')(session.Store);
 // AD: Just commiting out the above until we know what to use it for.
@@ -41,6 +43,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes); //This is allowing us to access our index in our controllers folder -JKD
 // app being express, this sets out static directory return. We may have to change this down the line to ensure 
 // we hit main.handlebars
+
+// Middleware to add the PasswordRevealer script to the handlebars view
+app.use((req, res, next) => {
+  res.locals.passwordRevealerScript = '<script src="/node_modules/password-revealer/dist/password-revealer.js"></script>';
+  next();
+});
 
 
 // This just sets up our routers via controllers.

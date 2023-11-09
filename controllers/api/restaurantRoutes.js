@@ -3,7 +3,7 @@ const {model} = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
-    const restaurantData = await model.getRestaurant(); 
+    const restaurantData = await model.seedRestaurants(); 
     if (!restaurantData) {
       return res.status(404).json({ message: 'restaurant data not found' });
     }
@@ -13,4 +13,5 @@ router.post('/', async (req, res) => {
   }
 });
 
+// I want this route to return resturant/package data.
 module.exports = router;

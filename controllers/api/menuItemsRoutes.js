@@ -3,7 +3,7 @@ const {model} = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
-    const menuData = await model.getRestaurants();
+    const menuData = await model.menuItem();
     if (!menuData) {
       return res.status(404).json({ message: 'menu data not found' });
     }
@@ -13,5 +13,5 @@ router.post('/', async (req, res) => {
   }
 });
 
-
+// I want this route to return menuItems data.
 module.exports = router;

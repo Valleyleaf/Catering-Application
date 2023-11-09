@@ -36,7 +36,6 @@ router.get('/package' , async (req,res) => {
 
 
 router.get('/package/:id' , async (req,res) => {
-  
   try{
     const data = await Restaurants.findByPk(req.params.id)
     let rest = data.get({plain:true})
@@ -47,6 +46,10 @@ router.get('/package/:id' , async (req,res) => {
     console.log(err);
     res.status(500).json(err);
   }
+})
+
+router.get('/profile' , (req,res) => {
+  res.render('profile');
 })
 
 router.get("/login" , async (req,res) => {

@@ -18,10 +18,13 @@ router.post('/', async (req, res) => {
 });
 // We can use the above for multible different things. I think a copy of this route named 'mainroute' or something
 //would be good to post initial handlebar.
+
+
+
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
-
+    
     if (!userData) {
       res
         .status(400)

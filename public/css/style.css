@@ -223,6 +223,78 @@
         justify-content: space-evenly;
     }
 
+    .overlay {
+        width:1000px;
+        height:750px;
+        position: fixed;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        top:0;
+        
+    }
+
+    .profile-card{
+        display: flex;
+        justify-content: space-evenly;
+        background-color: beige;
+        border:solid black;
+        width: 1250px;
+        height: 750px;
+        border-radius: 25px;
+        align-items: center;
+    }
+
+    .profile-aside {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .profile-aside ul {
+        font-size: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-main {
+        margin: 0;
+        height: 700px;
+        display: flex;
+        justify-content: center;
+        background-color: lightgrey;
+        border:solid black;
+    }
+
+    .profile-main h1 {
+        margin: 10px;
+        font-size:50px;
+    }
+
+    .profile-dash{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .profile-dash p {
+        font-size: 25px;
+    }
+    
+    .profile-dash * {
+        margin: 15px;
+    }
+    .profileBtn:hover {
+        cursor: pointer;
+    }
+
+    
+
+    
     
     
     
@@ -257,6 +329,12 @@
     width: 250px;
     border-radius: 25px;
     box-shadow: 0 0 12px 12px;
+    }
+
+    #overlay-pic {
+    width: 250px;
+    border-radius: 25px;
+    border: solid black;
     }
   
     

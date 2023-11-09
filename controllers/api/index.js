@@ -1,14 +1,15 @@
 const router = require('express').Router();
-const userRoutes = require('./userRoutes');
-const restaurantRoutes = require('./restaurantRoutes');
-const menuRoutes = require('./menuRoutes')
-const commentRoutes = require('./commentRoutes')
+const signupRoutes = require('./signUpRoutes');
+const commentRoutes = require('./commentRoutes');
+const menuRoutes = require('./menuItemsRoutes');
+const userDataRoutes = require('./userDataRoutes');
 
-router.use('/users', userRoutes);
-router.use('/restaurants', restaurantRoutes);
-router.use('./menu', menuRoutes);
-router.use('/comments',commentRoutes)
-
+router.use('/signup', signupRoutes);
+router.use('/comments', commentRoutes);
+router.use('/menus', menuRoutes);
+router.use('/users', userDataRoutes);
 
 module.exports = router;
 
+
+// This can be considered the main api route file. All other routes should be referenced in here.

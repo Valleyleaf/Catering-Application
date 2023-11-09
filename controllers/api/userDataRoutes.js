@@ -3,7 +3,7 @@ const {model} = require('../../models');
 
 router.post('/comments', async (req, res) => {
   try {
-    const commentData = await model.Commentseed(); 
+    const commentData = await model.seedUsers(); 
     if (!commentData) {
       return res.status(404).json({ message: 'comment data not found' });
     }

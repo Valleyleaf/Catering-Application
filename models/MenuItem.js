@@ -22,8 +22,16 @@ MenuItem.init(
             model: 'restaurants',
             key:'id'
         },
-        },
-    }, {
+    },
+    user_id:{
+        type:DataTypes.INTEGER,
+        references:{
+            model:'users',
+            key:'id'
+        }
+    }
+    },
+    {
         sequelize,
         freezeTableName: true,
         underscored: true,
@@ -32,4 +40,3 @@ MenuItem.init(
 
 module.exports= MenuItem;
 
-// AD: Fixed spelling error in resturants

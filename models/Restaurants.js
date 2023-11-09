@@ -19,7 +19,11 @@ Restaurants.init(
         cuisine: {
             type:DataTypes.STRING,
             allowNull:false,
-        }
+        },
+        imageFilename:{
+            type:DataTypes.STRING,
+            allowNull:false,
+        },
     },
 {
 sequelize,

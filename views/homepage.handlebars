@@ -1,13 +1,15 @@
-  <section class="landingPage">
-  
-  <img src="images/LandingPagePic.png">
-  <h2>FOUR catering</h2>
-  <p>Slogan here</p>
-  </section>
-  
-  <div>
+
+
+  <img id="homepagePic" src="images/LandingPagePic.png" />
+  <div class="slogan">
+    <h2>FOUR Catering</h2>
+    <p>"From Our Kitchen to Your Table."</p>
+  </div>
+
+
+  <div class="rest-grid">
   {{#each rests as |rest|}}
   {{> restaurant-details}}
   {{/each}}
   </div>
-
+  

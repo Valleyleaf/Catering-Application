@@ -8,6 +8,8 @@ router.get('/', async (req, res) => {
     const data = await Restaurants.findAll()
 
     const rests = data.map((rest) => rest.get({plain: true}))
+
+
     //firstRest:rests[0] could be use
     res.render('homepage' , {rests} );
     console.log(rests)

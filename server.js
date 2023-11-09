@@ -7,7 +7,6 @@ const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-
 // const PLACEHOLDER = require('connect-session-sequelize')(session.Store);
 // AD: Just commiting out the above until we know what to use it for.
 
@@ -15,7 +14,6 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const hbs = eHandleBars.create({});
-
 
 const sess = {
   secret: 'Super secret secret',
@@ -41,7 +39,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes); //This is allowing us to access our index in our controllers folder -JKD
 // app being express, this sets out static directory return. We may have to change this down the line to ensure 
 // we hit main.handlebars
-
 
 // This just sets up our routers via controllers.
 sequelize.sync({ force: false }).then(() => {

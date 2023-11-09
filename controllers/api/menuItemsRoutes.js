@@ -13,6 +13,5 @@ router.post('/menu', async (req, res) => {
   }
 });
 
-module.exports = router;
 
-// Above imports models. Uses
+module.exports = router;

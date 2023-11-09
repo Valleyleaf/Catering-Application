@@ -179,7 +179,7 @@
 
     .rest-card {
         background-color: grey;
-        border-color: solid black;
+        /* border-color: solid black; */
         width: 600px;
         height: 300px;
         display: flex;
@@ -193,6 +193,11 @@
         margin: 15px;
         display: flex;
         justify-content: center;
+    }
+
+    .rest-card:hover {
+        box-shadow: 0 0 5px 5px white;
+        cursor: pointer;
     }
 
     .rest-grid {
@@ -251,6 +256,7 @@
     #package-pic{
     width: 250px;
     border-radius: 25px;
+    box-shadow: 0 0 12px 12px;
     }
   
     

@@ -1,6 +1,7 @@
 const sequelize = require('../config/connection');
 const {Restaurants} = require('../models');
 
+
 const seedData = [
     {
         name: 'The Italiano',
@@ -36,10 +37,6 @@ const seedData = [
         name: 'Spices of delight',
         cuisine: 'Indian',
         imageFilename:'/images/Package-6.png',
-        menuItems: [
-          'Butter Chicken',
-          'samosas',
-        ],
       },
     ];
 

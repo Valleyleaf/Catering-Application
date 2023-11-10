@@ -1,3 +1,4 @@
+const sequelize = require('../config/connection');
 const { MenuItem}  =require('../models')
 
 
@@ -9,7 +10,6 @@ const menuItemData = [
         'Desert: Gelato'
     ],
     restaurant_ref_id:1,
-    user_id:1
 },
 {
     package: [
@@ -18,7 +18,6 @@ const menuItemData = [
       'Dessert: Baklava'
     ],
     restaurant_ref_id: 2,
-    user_id: 2
   },
   {
     package: [
@@ -27,7 +26,6 @@ const menuItemData = [
       'Dessert: Apple Pie'
     ],
     restaurant_ref_id: 3,
-    user_id: 3
   },
   {
     package: [
@@ -36,7 +34,6 @@ const menuItemData = [
       'Dessert: Mochi Ice Cream'
     ],
     restaurant_ref_id: 4,
-    user_id: 4
   },
   {
     package: [
@@ -45,7 +42,6 @@ const menuItemData = [
       'Dessert: Churros'
     ],
     restaurant_ref_id: 5,
-    user_id: 5
   },
   {
     package: [
@@ -54,11 +50,8 @@ const menuItemData = [
       'Dessert: Gulab Jamun'
     ],
     restaurant_ref_id: 6,
-    user_id: 6
   }
 ];
 
 const menuItemDataSeed = () => MenuItem.bulkCreate(menuItemData);
 module.exports = menuItemDataSeed;
-
-// Removing id because SQL will auto increment each item on its own.

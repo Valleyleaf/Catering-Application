@@ -38,5 +38,6 @@
 -- (5, 'Guacamole and Chips'),
 -- (5, 'Burrito Bowl');
 
--- AD: Not sure if we will be using these, but just in case, I fixed a number of spelling errors.
+--Save for reference
+
 

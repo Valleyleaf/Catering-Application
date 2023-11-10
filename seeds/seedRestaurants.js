@@ -27,6 +27,15 @@ const seedData = [
         cuisine: 'Mexican',
      
       },
+      {
+        name: 'Spices of delight',
+        cuisine: 'Indian',
+        imageFilename:'/images/Package-6.png',
+        menuItems: [
+          'Butter Chicken',
+          'samosas',
+        ],
+      },
     ];
 
 const seedRestaurants = () => Restaurants.bulkCreate(seedData);

@@ -20,13 +20,10 @@ Restaurants.init(
             type:DataTypes.STRING,
             allowNull:false,
         },
-        restaurant_id: {
-            type:DataTypes.INTEGER,
-            references: {
-                model:'menu',
-                key:'id'
-            }
-        }
+        imageFilename:{
+            type:DataTypes.STRING,
+            allowNull:false,
+        },
     },
 {
 sequelize,

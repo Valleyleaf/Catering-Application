@@ -2,33 +2,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FOUR caitering</title>
-    <link rel="stylesheet"  type="text/css" href="css/style.css" />
+    <title>FOUR Catering</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
 
   </head>
   <body>
     <header>
-      <h1>FOUR catering</h1> 
-      
+      <h1>FOUR Catering</h1>
+
       <nav>
         <ul>
           <li>
             <a href="/">Home</a>
           </li>
           <li>
-            <a>Cart</a>
+            <a href="/login">Login</a>
           </li>
           <li>
-            <a>Contact us</a>
-            </li>
+            <a href="/profile">Profile</a>
+          </li>
+          <li>
+
+            <a href="/cart">Cart</a>
+          </li>
         </ul>
-        
+
       </nav>
     </header>
+    <main>
+      {{!-- <button class="userBtn"></button>
+      <aside class="user-menu" class="hidden">
+        <h2>
+          User Menu
+        </h2>
+      </aside> --}}
 
+      <section class="body">
+        {{{body}}}
+      </section>
+
+    </main>
+    <script src="/js/buttonScript.js">
+    
+      
+    </script>
 
     
-
   </body>
-  
+
 </html>

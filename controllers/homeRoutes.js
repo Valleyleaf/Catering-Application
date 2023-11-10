@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const mainPage = require ('./../views/layouts/main.handlebars')
 
 router.get('/', async (req,res) => {
     try {
@@ -10,8 +9,6 @@ router.get('/', async (req,res) => {
                 req.session.countVisit = 1;
             }
         }) 
-} catch (err) {
-    console.log(err);
-}
-   
+
+module.exports = router;
 })

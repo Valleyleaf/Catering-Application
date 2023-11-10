@@ -1,7 +1,7 @@
 DROP DATABASE IF EXISTS catering_db;
 CREATE DATABASE catering_db;
 
-USE catering_db;
+-- USE catering_db;
 
 -- CREATE TABLE users (
 --   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,

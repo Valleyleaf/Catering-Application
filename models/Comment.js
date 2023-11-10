@@ -27,6 +27,14 @@ Comment.init(
             len: [1]
         }
       }
+      ,menu_item_id:{
+        type:DataTypes.INTEGER,
+        allowNull:false,
+        references:{
+          model:'menu',
+          key:'id'
+        }
+      }
   },
   {
     sequelize,

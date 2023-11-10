@@ -30,5 +30,4 @@ CREATE DATABASE catering_db;
 --   FOREIGN KEY (restaurant_id) REFERENCES restaurants(id) ON DELETE CASCADE
 -- );
 
-
--- AD: Not sure if we will be using these, but just in case, I fixed a number of spelling errors.
+-- Don't delete these comments even after cleanup. They are good for reference.

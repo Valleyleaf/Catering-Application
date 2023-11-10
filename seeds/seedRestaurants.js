@@ -5,26 +5,31 @@ const seedData = [
     {
         name: 'The Italiano',
         cuisine: 'Italian',
+        imageFilename:'/images/Package-1.png',
       
       },
       {
         name: 'Greek Vacation',
         cuisine: 'Greek',
+        imageFilename:'/images/Package-2.png',
       
       },
       {
         name: 'Classic American',
         cuisine: 'American',
+        imageFilename:'/images/Package-3.png',
       
       },
       {
         name: 'Tastes of the East',
         cuisine: 'Japanese',
+        imageFilename:'/images/Package-4.png',
        
       },
       {
         name: 'Mexican package',
         cuisine: 'Mexican',
+        imageFilename:'/images/Package-5.png',
      
       },
       {

@@ -24,6 +24,10 @@ Restaurants.init(
             type:DataTypes.STRING,
             allowNull:false,
         },
+        MenuItem:{
+            type: DataTypes.ARRAY(package[i++]),
+            allowNull:false,
+        },
     },
 {
 sequelize,

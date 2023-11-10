@@ -47,8 +47,8 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
+    modelName: 'users',
   }
 );
-// User model. Used to create users. Amazing I know.
+
 module.exports = User;

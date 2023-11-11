@@ -1,13 +1,13 @@
 const router = require('express').Router();
 const {model} = require('../../models');
 
-router.post('/comments', async (req, res) => {
+router.post('/user', async (req, res) => {
   try {
-    const commentData = await model.seedUsers(); 
-    if (!commentData) {
-      return res.status(404).json({ message: 'comment data not found' });
+    const userData = await model.seedUsers(); 
+    if (!userData) {
+      return res.status(404).json({ message: 'user data not found' });
     }
-    res.status(200).json(commentData);
+    res.status(200).json(userData);
   } catch (err) {
     res.status(400).json(err);
   }

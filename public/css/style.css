@@ -108,18 +108,8 @@
         margin: 25px 50px;
     }
 
-    .hidden {
-        display: flex;
-    }
+  
     
-    .loginMenu {
-        border: solid black;
-        width: 300px;
-        display: flex;
-        justify-content: center;
-        background-color: whitesmoke;
-        box-shadow: 10px 10px 0px 0px;
-    }
 
     .body {
         display: flex;
@@ -130,6 +120,15 @@
         background-color: var(--black);
         align-items: center;
         
+    }
+
+    .loginMenu {
+        border: solid black;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        background-color: whitesmoke;
+        box-shadow: 10px 10px 0px 0px;
     }
 
     .login-form {
@@ -144,6 +143,30 @@
     .login-form * {
         margin:15px;
     }
+
+    .signup-menu{
+        border: solid black;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        background-color: whitesmoke;
+        box-shadow: 10px 10px 0px 0px;
+    }
+
+    .signup-form {
+        margin: 45px;
+        
+        display: flex;
+        flex-direction: column;
+        
+        align-content: center;
+    }
+
+    .signup-form * {
+        margin:15px;
+    }
+
+
     .slogan {
         position: absolute;
         top: 300px;
@@ -204,10 +227,11 @@
     .rest-grid {
         
         display: grid;
-        margin: 100px;
+        
         grid-template-columns: repeat(3, 1fr);
         
         grid-gap: 5px;
+        margin-bottom: 20px;
     }
 
     .package-details {
@@ -303,6 +327,36 @@
         font-size: 50px;
     }
 
+    .package {
+        background-color: grey;
+        width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 25px;
+        border:solid black;
+        
+    }
+
+    .package img {
+        width: 450px;
+        border-radius: 35px;
+        border:solid black;
+    }
+
+    .package button {
+        border-radius: 20px;
+        width: 100px;
+    }
+
+    .package * {
+        margin: 15px;
+    }
+
+    .package p {
+        font-size: 20px;
+    }
+
     
 
     
@@ -334,6 +388,7 @@
         border:solid black;
         filter: blur(3px);
         position: relative;
+        margin-top:0px;
     }
 
     #package-pic{
@@ -347,7 +402,14 @@
     border-radius: 25px;
     border: solid black;
     }
+
+    #details{
+        color: white;
+        margin-top:50px;
+        margin-bottom: 0;
+    }
   
+
     
     
     

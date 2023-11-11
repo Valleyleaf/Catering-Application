@@ -15,9 +15,7 @@
           <li>
             <a href="/">Home</a>
           </li>
-          <li>
-            <a href="/login">Login</a>
-          </li>
+
           <li>
             <a href="/profile">Profile</a>
           </li>
@@ -25,17 +23,30 @@
 
             <a href="/cart">Cart</a>
           </li>
+
+          {{#unless logged_in}}
+            <li>
+              <a href="/login">Login</a>
+            </li> 
+            <li>
+              <a href="/signup">Sign up</a>
+            </li>
+          {{else}}
+            <li>
+              <a href="" id="logout">Logout</a>
+            </li>
+          {{/unless}}
         </ul>
 
       </nav>
     </header>
     <main>
-      {{!-- <button class="userBtn"></button>
+      {{! <button class="userBtn"></button>
       <aside class="user-menu" class="hidden">
         <h2>
           User Menu
         </h2>
-      </aside> --}}
+      </aside> }}
 
       <section class="body">
         {{{body}}}
@@ -43,11 +54,13 @@
 
     </main>
     <script src="/js/buttonScript.js">
-    
-      
+
     </script>
 
-    
+    {{#if logged_in}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
+
   </body>
 
 </html>

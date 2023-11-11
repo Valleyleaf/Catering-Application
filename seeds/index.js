@@ -16,11 +16,11 @@ const seedAll = async() => {
     await seedRestaurants();
     console.log('\n----------------Restuarants seeded ---------------\n');
 
-    await menuSeed();
-    console.log('\n----------------menu seeded ---------------\n');
+    // await menuSeed();
+    // console.log('\n----------------menu seeded ---------------\n');
 
-    await seedComment();
-    console.log('\n----------------Comments seeded---------------\n');
+    // await seedComment();
+    // console.log('\n----------------Comments seeded---------------\n');
 
 
     process.exit(0);

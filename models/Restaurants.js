@@ -24,6 +24,15 @@ Restaurants.init(
             type:DataTypes.STRING,
             allowNull:false,
         },
+
+        package:{
+            type: DataTypes.JSON,
+            allowNull:false,
+        },
+        cost: {
+            type: DataTypes.INTEGER,
+            allowNull : false,
+        }
     },
 {
 sequelize,

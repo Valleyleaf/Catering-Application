@@ -1,24 +1,57 @@
-const { MenuItem}  =require('../models')
+// const sequelize = require('../config/connection');
+// const {MenuItem}  =require('../models')
 
 
-const menuItemData = [
-{
-    id:1,
-    item_name:'something',
-    restaurant_id:1,
-    user_id:1
-},{
-    id:2,
-    item_name:'Soup',
-    restaurant_id:2,
-    user_id:2
-},{
-    id:3,
-    item_name:'else',
-    restaurant_id:3,
-    user_id:3
-}
-]
+// const menuItemData = [
+// {
+//     package:[
+//         'Appetizer: Italian wedding soup',
+//         'Main: Pasta Carbonara',
+//         'Desert: Gelato'
+//     ],
+//     restaurant_ref_id:1,
+// },
+// {
+//     package: [
+//       'Appetizer: Greek Salad',
+//       'Main: Moussaka',
+//       'Dessert: Baklava'
+//     ],
+//     restaurant_ref_id: 2,
+//   },
+//   {
+//     package: [
+//       'Appetizer: Buffalo Wings',
+//       'Main: Cheeseburger',
+//       'Dessert: Apple Pie'
+//     ],
+//     restaurant_ref_id: 3,
+//   },
+//   {
+//     package: [
+//       'Appetizer: Edamame',
+//       'Main: Sushi Platter',
+//       'Dessert: Mochi Ice Cream'
+//     ],
+//     restaurant_ref_id: 4,
+//   },
+//   {
+//     package: [
+//       'Appetizer: Guacamole',
+//       'Main: Tacos',
+//       'Dessert: Churros'
+//     ],
+//     restaurant_ref_id: 5,
+//   },
+//   {
+//     package: [
+//       'Appetizer: Samosa',
+//       'Main: Chicken Tikka Masala',
+//       'Dessert: Gulab Jamun'
+//     ],
+//     restaurant_ref_id: 6,
+//   }
+// ];
 
-const menuItemDataSeed = () => MenuItem.bulkCreate(menuItemData);
-module.exports = menuItemDataSeed;
+// const menuItemDataSeed = () => MenuItem.bulkCreate(menuItemData);
+// module.exports = menuItemDataSeed;

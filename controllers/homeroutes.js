@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const {Restaurants, MenuItem} = require('./../models');
+const withAuth = require("../utils/authen")
 
 router.use((req, res, next) => {
     res.locals.logged_in = req.session.logged_in;
@@ -27,7 +28,7 @@ router.get('/', async (req, res) => {
 });
 
 
-router.get('/package' , async (req,res) => {
+router.get('/package' ,  async (req,res) => {
   
   try{
     const data = await Restaurants.findAll()
@@ -56,10 +57,10 @@ router.get('/package/:id' , async (req,res) => {
   }
 })
 
-router.get('/profile' , (req,res) => {
-  if (!req.session.logged_in) {
-    res.redirect('/login')
-  }
+router.get('/profile' , withAuth, (req,res) => {
+  // if (!req.session.logged_in) {
+  //   res.redirect('/login')
+  // }
   res.render('profile');
 })
 

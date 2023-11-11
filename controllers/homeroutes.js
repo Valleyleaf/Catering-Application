@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
     const data = await Restaurants.findAll()
     const rests = data.map((rest) => rest.get({plain: true}))
     //firstRest:rests[0] could be use
-    res.render('homepage' , {rests} );
+    res.render('homepage' , {rests});
     // console.log(rests)
   }catch (err) {
     console.log(err);
@@ -25,8 +25,9 @@ router.get('/package' , async (req,res) => {
   try{
     const data = await Restaurants.findAll()
     const rests = data.map((rest) => rest.get({plain: true}))
+    
     //firstRest:rests[0] could be use
-    res.render('package' , {rests} );
+    res.render('package' , {rests } );
     // console.log(rests)
   }catch (err) {
     console.log(err);
@@ -40,7 +41,8 @@ router.get('/package/:id' , async (req,res) => {
     const data = await Restaurants.findByPk(req.params.id)
     let rest = data.get({plain:true})
     let restString = JSON.stringify(rest,null,2);
-    res.render('package' , {rest: rest } );
+    const package_app = rest.package[0];
+    res.render('package' , {rest: rest} );
   }catch (err) {
     console.log(err);
     res.status(500).json(err);

@@ -54,4 +54,4 @@
 // ];
 
 // const menuItemDataSeed = () => MenuItem.bulkCreate(menuItemData);
-module.exports = menuItemDataSeed;
+// module.exports = menuItemDataSeed;

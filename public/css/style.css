@@ -303,6 +303,24 @@
         font-size: 50px;
     }
 
+    .package {
+        background-color: grey;
+        width: 750px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 25px;
+    }
+
+    .package img {
+        width: 450px;
+        border-radius: 35px;
+    }
+
+    .package * {
+        margin: 0;
+    }
+
     
 
     

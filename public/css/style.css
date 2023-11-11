@@ -109,14 +109,7 @@
     }
 
   
-    .loginMenu {
-        border: solid black;
-        width: 300px;
-        display: flex;
-        justify-content: center;
-        background-color: whitesmoke;
-        box-shadow: 10px 10px 0px 0px;
-    }
+    
 
     .body {
         display: flex;
@@ -127,6 +120,15 @@
         background-color: var(--black);
         align-items: center;
         
+    }
+
+    .loginMenu {
+        border: solid black;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        background-color: whitesmoke;
+        box-shadow: 10px 10px 0px 0px;
     }
 
     .login-form {
@@ -141,6 +143,30 @@
     .login-form * {
         margin:15px;
     }
+
+    .signup-menu{
+        border: solid black;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        background-color: whitesmoke;
+        box-shadow: 10px 10px 0px 0px;
+    }
+
+    .signup-form {
+        margin: 45px;
+        
+        display: flex;
+        flex-direction: column;
+        
+        align-content: center;
+    }
+
+    .signup-form * {
+        margin:15px;
+    }
+
+
     .slogan {
         position: absolute;
         top: 300px;

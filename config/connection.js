@@ -10,7 +10,7 @@ if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(
     'user_db',
     'root',
-    'Password',
+    '2524',
     {
       host: 'localhost',
       dialect: 'mysql',

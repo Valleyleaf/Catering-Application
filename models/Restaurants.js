@@ -24,6 +24,10 @@ Restaurants.init(
             type:DataTypes.STRING,
             allowNull:false,
         },
+        package:{
+            type:sequelize.JSON,
+            allowNull:false
+        }
     },
 {
 sequelize,

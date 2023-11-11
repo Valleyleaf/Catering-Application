@@ -1,33 +1,37 @@
-// const { Model,DataTypes} = require('sequelize');
-// const sequelize = require('../config/connection');
+const { Model,DataTypes} = require('sequelize');
+const sequelize = require('../config/connection');
 
-// //create restaurants model
-// class Cart extends Model {}
+//create restaurants model
+class Cart extends Model {}
 
 
-// Bookings.init(
-//     {
-//         id: {
-//             type:DataTypes.INTEGER,
-//             primaryKey:true,
-//             autoIncrement:true,
-//         },
-//         cartItems:{
-//             type:DataTypes.JSON,
-//             allowNull: false,
-//         },
-//         orderID: {
-//             type: DataTypes.STRING,
-//             allowNull: false,
-//         },
-//     },
-// {
-// sequelize,
-// freezeTableName: true,
-// underscored: true,
-// modelName: 'bookings'
-// }
-// );
-// module.exports = Bookings;
+Cart.init(
+    {
+        id: {
+            type:DataTypes.INTEGER,
+            primaryKey:true,
+            autoIncrement:true,
+        },
+        cartItems:{
+            type:DataTypes.JSON,
+            allowNull: false,
+        },
+        quantity:{
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        orderID: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+    },
+{
+sequelize,
+freezeTableName: true,
+underscored: true,
+modelName: 'cart'
+}
+);
+module.exports = Cart;
 
 // May or may not use this.

@@ -1,6 +1,11 @@
 const router = require('express').Router();
 const {Restaurants, MenuItem} = require('./../models');
 
+router.use((req, res, next) => {
+    res.locals.logged_in = req.session.logged_in;
+    next();
+  });
+
 router.get('/', async (req, res) => {
   // Send the rendered Handlebars.js template back as the response
 
@@ -8,7 +13,9 @@ router.get('/', async (req, res) => {
     const data = await Restaurants.findAll()
     const rests = data.map((rest) => rest.get({plain: true}))
     //firstRest:rests[0] could be use
-    res.render('homepage' , {rests});
+    res.render('homepage' , {
+        rests,
+        logged_in: req.session.logged_in});
     // console.log(rests)
   }catch (err) {
     console.log(err);

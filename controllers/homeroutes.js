@@ -57,6 +57,9 @@ router.get('/package/:id' , async (req,res) => {
 })
 
 router.get('/profile' , (req,res) => {
+  if (!req.session.logged_in) {
+    res.redirect('/login')
+  }
   res.render('profile');
 })
 

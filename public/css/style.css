@@ -108,10 +108,7 @@
         margin: 25px 50px;
     }
 
-    .hidden {
-        display: flex;
-    }
-    
+  
     .loginMenu {
         border: solid black;
         width: 300px;
@@ -204,7 +201,7 @@
     .rest-grid {
         
         display: grid;
-        margin: 100px;
+        
         grid-template-columns: repeat(3, 1fr);
         
         grid-gap: 5px;

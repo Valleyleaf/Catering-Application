@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const {Restaurants, MenuItem} = require('./../models');
-const withAuth = require("../utils/authen")
+const {Restaurants, MenuItem, User} = require('./../models');
+const withAuth = require("../utils/authen");
+const { findByPk, findAll } = require('../models/User');
 
 router.use((req, res, next) => {
     res.locals.logged_in = req.session.logged_in;
@@ -28,7 +29,7 @@ router.get('/', async (req, res) => {
 });
 
 
-router.get('/package' ,  async (req,res) => {
+router.get('/package' , async (req,res) => {
   
   try{
     const data = await Restaurants.findAll()
@@ -57,11 +58,14 @@ router.get('/package/:id' , async (req,res) => {
   }
 })
 
-router.get('/profile' , withAuth, (req,res) => {
-  // if (!req.session.logged_in) {
-  //   res.redirect('/login')
-  // }
-  res.render('profile');
+router.get('/profile' , withAuth, async (req,res) => {
+
+  const userData = req.session.user_id;
+  const user = await User.findByPk(userData)
+  const name = user.name;
+  console.log(userData);
+  
+  res.render('profile',{name});
 })
 
 router.get("/login" , async (req,res) => {

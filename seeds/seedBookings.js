@@ -1,14 +1,26 @@
 const sequelize = require('../config/connection');
-const {Bookings} = require('../models');
+const {Bookings, Cart} = require('../models');
 
 
-const seedData = [
-    {
-        user_id: '',
-        cartItems:{ },
-        date:'',
+const seedBookings = async (userID, selectedDate) => {
+  try {
+    const cartItems = await Cart.findAll({
+      where: {
+        user_id: userID,
       },
-    ];
+    });
+    const seedData = cartItems.map((cartItem) => ({
+      user_id: userID,
+      product_id: cartItem.product.id,
+      quanitity: cartItem.quantity,
+      date: selectedDate,
+    }));
 
-const seedBookings = () => Bookings.bulkCreate(seedData);
+    await Bookings.bulkCreate(seedData);
+    console.log ('Booking data Seeded')
+  } catch (error){
+    console.error('Seeding Booking data failed', error);
+  }
+};
+
     module.exports = seedBookings;

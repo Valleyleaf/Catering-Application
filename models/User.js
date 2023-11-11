@@ -35,6 +35,10 @@ User.init(
         len: [8],
       },
     },
+    cartItems: {
+      type: DataTypes.JSON,
+      allowNull: true,
+    }
   },
   {
     hooks: {

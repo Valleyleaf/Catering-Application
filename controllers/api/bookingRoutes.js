@@ -1,17 +1,19 @@
 const router = require('express').Router();
 const {model} = require('../../models');
 
-router.post('/', async (req, res) => {
-  try {
-    const bookingData = await model.seedBooking(); 
-    if (!bookingData) {
-      return res.status(404).json({ message: 'booking data not found' });
-    }
-    res.status(200).json(bookingData);
-  } catch (err) {
-    res.status(400).json(err);
-  }
+
+router.get('/', async (req, res) => {
+  db.query('SELECT * FROM Restaurants', (err, results) =>
+  {
+    if (err) throw err;
+    res.json(results);
+    console.log('>>>>>>>>>>>>>>This is bookings results:', results)
+  })
 });
 
-// I want this route to return resturant/package data.
+router.post('/addToCart', (req, res) => {
+  const { id, cartItems, Date, orderID} = req.body;
+})
+// req.body requests information from the body.
+
 module.exports = router;

@@ -7,22 +7,14 @@ class Bookings extends Model {}
 
 Bookings.init(
     {
-        id: {
+        Orderid: {
             type:DataTypes.INTEGER,
             primaryKey:true,
             autoIncrement:true,
         },
-        cartItems:{
-            type:DataTypes.JSON,
-            allowNull: false,
-        },
         date: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        },
-        orderID: {
-            type: DataTypes.STRING,
-            allowNull: false,
         },
     },
 {

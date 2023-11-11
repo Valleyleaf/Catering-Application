@@ -3,6 +3,7 @@
 const seedUsers = require('./userSeeds');
 const seedRestaurants = require('./seedRestaurants');
 const seedComment = require('./commentSeed');
+const seedBookings = require('./seedBookings')
 const sequelize = require('../config/connection');
 const menuSeed = require('./menuItemSeed')
 const seedAll = async() => {
@@ -15,6 +16,9 @@ const seedAll = async() => {
 
     await seedRestaurants();
     console.log('\n----------------Restuarants seeded ---------------\n');
+
+    await seedBookings();
+    console.log('\n----------------Bookings seeded ---------------\n');
 
     // await menuSeed();
     // console.log('\n----------------menu seeded ---------------\n');

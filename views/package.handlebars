@@ -1,8 +1,9 @@
-<div class="package">
+<div id="{{rest.id}}" class="package">
     <h1>{{rest.name}}</h1>
     <img src={{rest.imageFilename}}>
-    <p>For our Appetizer we have: {{rest.package.Appetizer}}</p>
+    <p>For our Appetizer we offer: {{rest.package.Appetizer}}</p>
     <p>Our main course consists of: {{rest.package.Main}}</p>
     <p>and to finish it of we offer {{rest.package.Dessert}} for desert.</p>
-    
+    <p>The total cost for this package comes up to {{rest.cost}} Dollars!</p>
+    <button id="add-to-cart">Add To Cart</button>
 </div>

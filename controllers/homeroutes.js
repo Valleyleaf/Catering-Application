@@ -27,7 +27,7 @@ router.get('/package' , async (req,res) => {
     const rests = data.map((rest) => rest.get({plain: true}))
     
     //firstRest:rests[0] could be use
-    res.render('package' , {rests } );
+    res.render('homepage' , {rests } );
     // console.log(rests)
   }catch (err) {
     console.log(err);

@@ -29,6 +29,10 @@ Restaurants.init(
             type: DataTypes.JSON,
             allowNull:false,
         },
+        cost: {
+            type: DataTypes.INTEGER,
+            allowNull : false,
+        }
     },
 {
 sequelize,

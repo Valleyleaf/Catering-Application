@@ -12,6 +12,7 @@ const seedData = [
           Main:'Pasta Carbonara',
           Dessert:'Gelato'
         },
+        cost:250,
       },
       {
         name: 'Greek Vacation',
@@ -22,7 +23,7 @@ const seedData = [
           Main: 'Moussaka',
           Dessert: 'Baklava'
         },
-      
+        cost:250,
       },
       {
         name: 'Classic American',
@@ -33,6 +34,7 @@ const seedData = [
           Main: 'Cheeseburger',
           Dessert: 'Apple Pie'
         },
+        cost:250,
       },
       {
         name: 'Tastes of the East',
@@ -43,6 +45,7 @@ const seedData = [
           Main: 'Sushi Platter',
           Dessert: 'Mochi Ice Cream'
         },
+        cost:250,
       },
       {
         name: 'Mexican package',
@@ -53,6 +56,7 @@ const seedData = [
           Main: 'Tacos',
           Dessert: 'Churros'
         },
+        cost:250,
       },
       {
         name: 'Spices of delight',
@@ -63,6 +67,7 @@ const seedData = [
           Main:'Chicken Tikka Masala',
           Dessert: 'Gulab Jamun'
         },
+        cost:250,
       },
     ];
 

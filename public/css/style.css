@@ -208,6 +208,7 @@
         grid-template-columns: repeat(3, 1fr);
         
         grid-gap: 5px;
+        margin-bottom: 20px;
     }
 
     .package-details {
@@ -305,20 +306,32 @@
 
     .package {
         background-color: grey;
-        width: 750px;
+        width: 600px;
         display: flex;
         flex-direction: column;
         align-items: center;
         border-radius: 25px;
+        border:solid black;
+        
     }
 
     .package img {
         width: 450px;
         border-radius: 35px;
+        border:solid black;
+    }
+
+    .package button {
+        border-radius: 20px;
+        width: 100px;
     }
 
     .package * {
-        margin: 0;
+        margin: 15px;
+    }
+
+    .package p {
+        font-size: 20px;
     }
 
     
@@ -352,6 +365,7 @@
         border:solid black;
         filter: blur(3px);
         position: relative;
+        margin-top:0px;
     }
 
     #package-pic{
@@ -365,7 +379,14 @@
     border-radius: 25px;
     border: solid black;
     }
+
+    #details{
+        color: white;
+        margin-top:50px;
+        margin-bottom: 0;
+    }
   
+
     
     
     

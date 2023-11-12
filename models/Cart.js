@@ -1,7 +1,7 @@
 const { Model,DataTypes} = require('sequelize');
 const sequelize = require('../config/connection');
 
-//create restaurants model
+//create cart model
 class Cart extends Model {}
 
 
@@ -11,6 +11,10 @@ Cart.init(
             type:DataTypes.INTEGER,
             primaryKey:true,
             autoIncrement:true,
+        },
+        user_id:{
+            type: DataTypes.INTEGER,
+            allowNull: false,
         },
         cartItems:{
             type:DataTypes.JSON,

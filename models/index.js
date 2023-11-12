@@ -3,6 +3,7 @@ const MenuItem = require('./MenuItem');
 const Restaurants =require('./Restaurants')
 const Comment = require('./Comment')
 const Bookings = require('./Bookings')
+const Cart = require('./Cart')
 
 //define association
 User.hasMany(MenuItem, {
@@ -40,4 +41,4 @@ Comment.belongsTo(MenuItem, {
 });
 
 
-module.exports = { User,MenuItem,Restaurants,Comment,Bookings};
+module.exports = { User,MenuItem,Restaurants,Comment,Bookings, Cart};

@@ -25,7 +25,7 @@ function reviewMenu() {
 
 
 const review = async (event) => {
-    
+    event.preventDefault();
     // preventDefault keeps page from reloading.
     const package = document.querySelector(".package");
     const package_id = package.getAttribute("id");

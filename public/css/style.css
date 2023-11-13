@@ -476,7 +476,10 @@
         width: 30%;
         margin: 15px;
     } */
-    
+    #click-delete{
+        color:black;
+        margin: 0;
+    }
     #package-header{
         font-size: 25px;
         color: white;

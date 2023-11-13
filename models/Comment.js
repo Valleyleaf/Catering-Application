@@ -35,6 +35,10 @@ Comment.init(
           model:'restaurants',
           key:'id'
         }
+      },
+      package_name :{
+        type:DataTypes.STRING,
+        allowNull:false,
       }
   },
   {

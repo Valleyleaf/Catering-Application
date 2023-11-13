@@ -1,5 +1,5 @@
 <div id="{{rest.id}}" class="package">
-    <h1>{{rest.name}}</h1>
+    <h1 id="rest-name">{{rest.name}}</h1>
     <img src={{rest.imageFilename}}>
     <p>For our Appetizer we offer: {{rest.package.Appetizer}}</p>
     <p>Our main course consists of: {{rest.package.Main}}</p>
@@ -12,34 +12,34 @@
     <h2 id="rev-h2">{{rest.name}} reviews</h2>
     <section class="review-sub">
         <div>
-        {{#each revs as |rev|}}
-        {{> reviews}}
-        {{/each}}
+            {{#each revs as |rev|}}
+            {{> reviews}}
+            {{/each}}
         </div>
-        
+
     </section>
     {{#unless logged_in}}
-            <a href="/login">Login to leave a review!</a>
+    <a href="/login">Login to leave a review!</a>
     {{else}}
-            <a id="leave-review">Leave a review</a>
+    <a id="leave-review">Leave a review</a>
     {{/unless}}
-    
+
 </section>
 
 <section class="review-form-menu" style="display: none;">
-    
-    
-    <form class="review-form">
-    <h2>{{name}}'s {{rest.name}} Review</h2>
-    <label for='review-text'>Write a review for {{rest.name}}</label>
-    <textarea placeholder="" type="text" id="review-text" name="review-text" required></textarea>
 
-    <input type="submit" value="review">
-   
+
+    <form class="review-form">
+        <h2>{{name}}'s {{rest.name}} Review</h2>
+        <label for='review-text'>Write a review for {{rest.name}}</label>
+        <textarea placeholder="" type="text" id="review-text" name="review-text" required></textarea>
+
+        <input type="submit" value="review">
+
     </form>
-    
+
     <button id="leave-review">Go back</button>
 </section>
- 
+
 
 <script src='/js/review.js'></script>

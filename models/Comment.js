@@ -20,18 +20,19 @@ Comment.init(
           key: 'id'
         }
       },
+      user_name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
       comment_text: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate: {
-            len: [1]
-        }
-      }
-      ,menu_item_id:{
+      },
+      package_id:{
         type:DataTypes.INTEGER,
         allowNull:false,
         references:{
-          model:'menu',
+          model:'restaurants',
           key:'id'
         }
       }

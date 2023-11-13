@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const {Restaurants, MenuItem, User,Comment} = require('./../models');
 const withAuth = require("../utils/authen");
-const { findByPk, findAll } = require('../models/User');
+
 
 router.use((req, res, next) => {
     res.locals.logged_in = req.session.logged_in;
@@ -50,7 +50,7 @@ router.get('/package/:id' , async (req,res) => {
     const revData = await Comment.findAll({ where: { package_id: req.params.id } });
     const userData = req.session.user_id;
     const user = await User.findByPk(userData)
-    const name = user.name;
+    
 
    
     const revs = revData.map((rev) => rev.get({plain:true}))
@@ -58,7 +58,7 @@ router.get('/package/:id' , async (req,res) => {
 
 
     console.log("User ids",revs);
-    res.render('package' , {rest: rest , revs:revs, name :name} );
+    res.render('package' , {rest: rest , revs:revs, name: req.session.name} );
   }catch (err) {
     console.log(err);
     res.status(500).json(err);

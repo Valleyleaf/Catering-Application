@@ -2,14 +2,12 @@ const revBtn = document.querySelectorAll("#leave-review");
 const menu = document.querySelector(".review-form-menu");
 
 
+
+
 for (let i = 0; i < revBtn.length; i++) {
     revBtn[i].addEventListener("click", reviewMenu )
+
 }
-
-    
-
-    
-    
 
 
 function reviewMenu() {
@@ -24,3 +22,29 @@ function reviewMenu() {
         review.display = "none"
     }
 }
+
+
+const review = async (event) => {
+    
+    // preventDefault keeps page from reloading.
+    const package = document.querySelector(".package");
+    const package_id = package.getAttribute("id");
+    
+    const comment_text = document.querySelector("#review-text").value.trim();
+    
+  
+      const response = await fetch('/api/comments', {
+        method: 'POST',
+        body: JSON.stringify({comment_text,package_id}),
+        headers: { 'Content-Type': 'application/json' },
+        
+      })
+
+      console.log(response)
+      location.reload();
+    };
+
+
+    document
+    .querySelector('.review-form')
+    .addEventListener('submit', review);

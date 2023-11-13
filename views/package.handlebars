@@ -18,7 +18,12 @@
         </div>
         
     </section>
-    <a id="leave-review">Leave a review</a>
+    {{#unless logged_in}}
+            <a href="/login">Login to leave a review!</a>
+    {{else}}
+            <a id="leave-review">Leave a review</a>
+    {{/unless}}
+    
 </section>
 
 <section class="review-form-menu" style="display: none;">
@@ -32,6 +37,7 @@
     <input type="submit" value="review">
    
     </form>
+    
     <button id="leave-review">Go back</button>
 </section>
  

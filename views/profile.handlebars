@@ -1,39 +1,40 @@
 <section class="profile-card">
-    <aside class="profile-aside">
-        <ul>
-            <li class="profileBtn" id="profile-dash">User Dashboard</li>
-            <li class="profileBtn" id="profile-fav">Favourites</li>
-            <li class="profileBtn" id="profile-rev">Reviews</li>
-            <li class="profileBtn" id="profile-order">Previous orders</li>
-        </ul>
-    </aside>
+  <aside class="profile-aside">
+    <ul>
+      <li class="profileBtn" id="profile-dash">User Dashboard</li>
+      <li class="profileBtn" id="profile-fav">Favourites</li>
+      <li class="profileBtn" id="profile-rev">Reviews</li>
+      <li class="profileBtn" id="profile-order">Previous orders</li>
+    </ul>
+  </aside>
 
-    <section class="profile-main">
+  <section class="profile-main">
 
-        <div class="profile-dash">
-            <h1>User Dashboard</h1>
-        <p>User : {{name}}</p>
-            
+    <div class="profile-dash">
+      <h1>User Dashboard</h1>
+      <p>User : {{name}}</p>
+
+    </div>
+
+    <div class="profile-fav" style="display :none;">
+        <h1>Favourites</h1>
+    </div>
+
+    <div class="profile-rev" style="display :none;">
+        <h1>Reviews</h1>
+        <p id="click-delete">click to delete</p>
+        <div id="profile-parent">
+        {{#each reviews as |review|}}
+        {{> profile-rev}}
+        {{/each}}
         </div>
+    </div>
 
-        {{!-- <div class="profile-fav">
-            <h1>Favourites</h1>
-        </div>
+    <div class="profile-order" style="display :none;">
+        <h1>Previous Orders</h1>
+    </div> 
 
-        <div class="profile-rev">
-            <h1>Reviews</h1>
-        </div>
-
-        <div class="profile-order">
-            <h1>Previous Orders</h1>
-        </div> --}}
-        
-
-
-
-
-    </section>
-
+  </section>
 
 </section>]
 <script src="js/profile.js"></script>

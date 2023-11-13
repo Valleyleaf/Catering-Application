@@ -25,17 +25,19 @@ function reviewMenu() {
 
 
 const review = async (event) => {
-    
+    event.preventDefault();
     // preventDefault keeps page from reloading.
     const package = document.querySelector(".package");
     const package_id = package.getAttribute("id");
+    const package_name = document.querySelector("#rest-name").innerHTML;
+    
     
     const comment_text = document.querySelector("#review-text").value.trim();
     
   
       const response = await fetch('/api/comments', {
         method: 'POST',
-        body: JSON.stringify({comment_text,package_id}),
+        body: JSON.stringify({comment_text,package_id,package_name}),
         headers: { 'Content-Type': 'application/json' },
         
       })

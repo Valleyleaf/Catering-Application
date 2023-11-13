@@ -7,3 +7,39 @@
     <p>The total cost for this package comes up to {{rest.cost}} Dollars!</p>
     <button id="add-to-cart">Add To Cart</button>
 </div>
+
+<section class="reviews">
+    <h2 id="rev-h2">{{rest.name}} reviews</h2>
+    <section class="review-sub">
+        <div>
+        {{#each revs as |rev|}}
+        {{> reviews}}
+        {{/each}}
+        </div>
+        
+    </section>
+    {{#unless logged_in}}
+            <a href="/login">Login to leave a review!</a>
+    {{else}}
+            <a id="leave-review">Leave a review</a>
+    {{/unless}}
+    
+</section>
+
+<section class="review-form-menu" style="display: none;">
+    
+    
+    <form class="review-form">
+    <h2>{{name}}'s {{rest.name}} Review</h2>
+    <label for='review-text'>Write a review for {{rest.name}}</label>
+    <textarea placeholder="" type="text" id="review-text" name="review-text" required></textarea>
+
+    <input type="submit" value="review">
+   
+    </form>
+    
+    <button id="leave-review">Go back</button>
+</section>
+ 
+
+<script src='/js/review.js'></script>

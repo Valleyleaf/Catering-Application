@@ -37,5 +37,3 @@ modelName: 'cart'
 }
 );
 module.exports = Cart;
-
-// May or may not use this.

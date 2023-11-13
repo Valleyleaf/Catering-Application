@@ -1,9 +1,10 @@
-const { Model,DataTypes } = require ('sequelize');// imports datatypes object from sequelize ,used to define the data types
+const { Model,DataTypes } = require ('sequelize');
+// imports datatypes object from sequelize ,used to define the data types
 const sequelize = require('../config/connection');
 
-//create menulist model
+
 class MenuItem extends Model {}
-// create fields/columns for Menulist model
+
 MenuItem.init(
     {
     id: {

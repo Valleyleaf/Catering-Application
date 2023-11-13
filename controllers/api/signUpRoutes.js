@@ -55,5 +55,3 @@ router.post('/logout', (req, res) => {
 });
 
 module.exports = router;
-
-// This is fine, dont touch it.

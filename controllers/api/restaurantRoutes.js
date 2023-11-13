@@ -13,5 +13,4 @@ router.post('/', async (req, res) => {
   }
 });
 
-// I want this route to return resturant/package data.
 module.exports = router;

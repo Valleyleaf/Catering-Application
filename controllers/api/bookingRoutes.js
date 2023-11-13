@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const {model} = require('../../models');
 const generateid = require('../../utils/generateOrderID');
+const Booking = require('../../models/Bookings')
+
 
 
 router.get('/', async (req, res) => {
@@ -8,34 +10,55 @@ router.get('/', async (req, res) => {
   {
     if (err) throw err;
     res.json(results);
-    console.log('>>>>>>>>>>>>>>This is bookings results:', results)
   })
 });
 
-router.post('/addToCart', (req, res) => {
-  const orderID = generateid();
-  const { id, cartItems, Date,} = req.body;
-  // Above needs seperate paramiters.
-})
-// req.body requests information from the body. So we want to tie the id to the user, cartItems to whats in the cart, Date to the date and the orderID needs to be randomly generated.
-// Created function in utils that will generate a random id.
 
-router.delete('/deleteFromCart', (req, res) => {
-  const { itemId } = req.body;
+router.post('/', async (req, res) => {
+  try {
+    const cartInfoString = `{
+      "user_id":${req.session.user_id},
+      "user_name":"${req.session.name}",
+      "package_id":${req.body.package_id},
+      "package_name":"${req.body.package_name}"
+      "order_id:"${generateid()}"
+      "date":${req.body.userInputDate},
+  }`
 
-  model.Cart.destroy({
-    where: {
-      id: itemId,
-    },
-  })
-    .then(() => {
-      res.send('Item deleted from cart successfully');
-    })
-    .catch((error) => {
-      console.error('Error deleting item from cart:', error);
-      res.status(500).send('Internal Server Error');
-    });
+const userJson = JSON.parse(cartInfoString);
+  console.log(cartInfoString);
+  const cartData = await Booking.create(userJson); 
+
+    
+    if (!cartData) {
+      return res.status(404).json({ message: 'cart data not found' });
+    }
+    res.json(cartData);
+  } catch (err) {
+    res.status(400).json(err);
+    console.log(err)
+  }
 });
+
+// Aston says: My cart function would not work. I ran into issue after issue and I am out of time so I am STEALING
+// Joshuas code from commentRoutes. Let it be know that the above is Joshuas code and I take 0 credit in making it.
+
+// router.delete('/deleteFromCart', (req, res) => {
+//   const { itemId } = req.body;
+
+//   model.Cart.destroy({
+//     where: {
+//       id: itemId,
+//     },
+//   })
+//     .then(() => {
+//       res.send('Item deleted from cart successfully');
+//     })
+//     .catch((error) => {
+//       console.error('Error deleting item from cart:', error);
+//       res.status(500).send('Internal Server Error');
+//     });
+// });
 
 // Make delete button that paths to deleteFromCart.
 

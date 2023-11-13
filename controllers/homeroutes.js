@@ -13,18 +13,13 @@ router.get('/', async (req, res) => {
   try {
     const data = await Restaurants.findAll()
     const rests = data.map((rest) => rest.get({plain: true}))
-    //firstRest:rests[0] could be use
     res.render('homepage' , {
         rests,
         logged_in: req.session.logged_in});
-    // console.log(rests)
   }catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
-
-
-  // res.render('homepage');
 });
 
 
@@ -33,15 +28,12 @@ router.get('/package' , async (req,res) => {
   try{
     const data = await Restaurants.findAll()
     const rests = data.map((rest) => rest.get({plain: true}))
-    //firstRest:rests[0] could be use
     res.render('homepage' , {rests } );
-    // console.log(rests)
   }catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 })
-
 
 router.get('/package/:id' , async (req,res) => {
   try{

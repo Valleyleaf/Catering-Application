@@ -22,6 +22,11 @@
 
     <div class="profile-rev" style="display :none;">
         <h1>Reviews</h1>
+        <div id="profile-parent">
+        {{#each reviews as |review|}}
+        {{> profile-rev}}
+        {{/each}}
+        </div>
     </div>
 
     <div class="profile-order" style="display :none;">

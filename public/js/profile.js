@@ -1,59 +1,52 @@
 const dashboardParent = document.querySelector(".profile-main");
-const dashboardChildren = dashboardParent.children; 
+const dashboardChildren = dashboardParent.children;
 const btns = document.querySelectorAll(".profileBtn");
 
-for (let i = 0; i < dashboardChildren.length; i++){
-    dashboardChildren[i].style.display = "none";
-    dashboardChildren[i].setAttribute("id", i)
-    console.log()
+
+
+for (let i = 0; i < dashboardChildren.length; i++) {
+  dashboardChildren[i].style.display = "none";
+  dashboardChildren[i].setAttribute("id", i);
+  console.log();
 }
 
-dashboardChildren[0].style.display = 'flex'
+dashboardChildren[0].style.display = "flex";
 
+const dashNav = (event) => {};
 
-const dashNav = (event) => {
-    
-}
-
-
-
-for (let i = 0 ; i < dashboardChildren.length; i++) {  
-        btns[i].setAttribute("id", i)
-        btns[i].addEventListener("click", function(event) {
-            console.log(this.id)
-            for (let i = 0; i < dashboardChildren.length; i++){
-                dashboardChildren[i].style.display = "none";
-                dashboardChildren[i].setAttribute("id", i)
-                console.log()
-            }
-            dashboardChildren[this.id].style.display = "flex"
-        })
-       
-       
+for (let i = 0; i < dashboardChildren.length; i++) {
+  btns[i].setAttribute("id", i);
+  btns[i].addEventListener("click", function (event) {
+    console.log(this.id);
+    for (let i = 0; i < dashboardChildren.length; i++) {
+      dashboardChildren[i].style.display = "none";
+      dashboardChildren[i].setAttribute("id", i);
+      console.log();
     }
+    dashboardChildren[this.id].style.display = "flex";
+  });
+}
 
+const reviews = document.querySelectorAll(".package-reviews-profile");
 
+async function deleteComment(id) {
+  const response = await fetch("/api/comments", {
+    method: "DELETE",
+    body: JSON.stringify({id}),
+    headers: { "Content-Type": "application/json" },
+  });
+}
 
-
-
-
-    /* <div class="profile-dash">
-<h1>User Dashboard</h1>
-<p>User : {{name}}</p>
-
-</div>
-
-<div class="profile-fav" style="display :none;">
-  <h1>Favourites</h1>
-</div>
-
-<div class="profile-rev" style="display :none;">
-  <h1>Reviews</h1>
-</div>
-
-<div class="profile-order" style="display :none;">
-  <h1>Previous Orders</h1>
-</div>  */
+for (let i = 0; i < reviews.length; i++) {
+  reviews[i].addEventListener("click", function (event) {
+    event.preventDefault();
+    deleteComment(this.id);
+    let element = document.getElementById(this.id)
+    element.remove()
+    
+  });
+  console.log(i);
+}
 
 
 

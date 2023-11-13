@@ -13,8 +13,10 @@ router.post('/', async (req, res) => {
       "user_id":${req.session.user_id},
       "user_name":"${req.session.name}",
       "comment_text":"${req.body.comment_text}",
-      "package_id":${req.body.package_id}
-}`
+      "package_id":${req.body.package_id},
+      "package_name":"${req.body.package_name}"
+  }`
+
 
 
 const userJson = JSON.parse(userInfoString);
@@ -45,6 +47,14 @@ router.get('/', async (req, res) => { //This route is for testing purposes to se
     res.status(400).json(err);
   }
 });
+
+router.delete('/', async (req,res) => {
+  
+  const data = await Comment.findByPk(req.body.id)
+  data.destroy();
+  
+  res.json("Comment deleted");
+})
 
 
 // I want this route to return comment data.

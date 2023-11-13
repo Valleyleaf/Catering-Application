@@ -2,7 +2,6 @@ const router = require('express').Router();
 const {Restaurants, MenuItem, User,Comment} = require('./../models');
 const withAuth = require("../utils/authen");
 
-
 router.use((req, res, next) => {
     res.locals.logged_in = req.session.logged_in;
     next();
@@ -50,15 +49,14 @@ router.get('/package/:id' , async (req,res) => {
     const revData = await Comment.findAll({ where: { package_id: req.params.id } });
     const userData = req.session.user_id;
     const user = await User.findByPk(userData)
-    
+    const name = user.name;
 
    
     const revs = revData.map((rev) => rev.get({plain:true}))
     const rest = data.get({plain:true});
 
 
-    console.log("User ids",revs);
-    res.render('package' , {rest: rest , revs:revs, name: req.session.name} );
+    res.render('package' , {rest: rest , revs:revs, name :req.session.name} );
   }catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -70,9 +68,12 @@ router.get('/profile' , withAuth, async (req,res) => {
   const userData = req.session.user_id;
   const user = await User.findByPk(userData)
   const name = user.name;
-  console.log(userData);
+  const reviewData = await Comment.findAll({where : {user_id:userData}})
+  const reviews = reviewData.map((review) => review.get({plain:true}))
   
-  res.render('profile',{name});
+  
+  
+  res.render('profile',{name,reviews});
 })
 
 router.get("/login" , async (req,res) => {

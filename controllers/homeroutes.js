@@ -42,10 +42,12 @@ router.get('/package/:id' , async (req,res) => {
     const revData = await Comment.findAll({ where: { package_id: req.params.id } });
     const userData = req.session.user_id;
     const user = await User.findByPk(userData)
-    if (!req.session.logged_in) {
-      const name = "user"
+    let name;
+      
+      if (!req.session.logged_in) {
+      name = "user"
     } else {
-      const name = user.name
+        name = user.name
     }
 
    
@@ -53,7 +55,7 @@ router.get('/package/:id' , async (req,res) => {
     const rest = data.get({plain:true});
 
 
-    res.render('package' , {rest: rest , revs:revs, name :this.name} );
+    res.render('package' , {rest: rest , revs:revs, name :name} );
   }catch (err) {
     console.log(err);
     res.status(500).json(err);

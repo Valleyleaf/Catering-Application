@@ -20,14 +20,14 @@ for (let i = 0; i < dashboardChildren.length; i++) {
     console.log(this.id);
     for (let i = 0; i < dashboardChildren.length; i++) {
       dashboardChildren[i].style.display = "none";
-      dashboardChildren[i].setAttribute("id", i);
+      dashboardChildren[i].setAttribute("id", i + 10000);
       console.log();
     }
     dashboardChildren[this.id].style.display = "flex";
   });
 }
 
-const reviews = document.querySelectorAll(".package-reviews-profile");
+
 
 async function deleteComment(id) {
   const response = await fetch("/api/comments", {
@@ -36,6 +36,8 @@ async function deleteComment(id) {
     headers: { "Content-Type": "application/json" },
   });
 }
+
+const reviews = document.querySelectorAll(".package-reviews-profile");
 
 for (let i = 0; i < reviews.length; i++) {
   reviews[i].addEventListener("click", function (event) {

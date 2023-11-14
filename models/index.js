@@ -2,10 +2,18 @@ const User = require('./User');
 const MenuItem = require('./MenuItem');
 const Restaurants =require('./Restaurants')
 const Comment = require('./Comment')
+const Bookings = require('./Bookings')
+const Cart = require('./Cart')
 
 //define association
 User.hasMany(MenuItem, {
     foreignKey: 'user_id',
+});
+User.hasMany(Bookings, {
+    foreignKey: 'user_id',
+});
+Bookings.belongsTo(User, {
+    foreignKey: 'id',
 });
 MenuItem.belongsTo(User, {
     foreignKey:'user_id',
@@ -32,4 +40,5 @@ Comment.belongsTo(MenuItem, {
     foreignKey:'menu_item_id',
 });
 
-module.exports = { User,MenuItem,Restaurants,Comment};
+
+module.exports = { User,MenuItem,Restaurants,Comment,Bookings, Cart};

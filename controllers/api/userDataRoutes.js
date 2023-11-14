@@ -46,5 +46,5 @@ router.post("/logout", (req, res) => {
   }
 });
 
-// I want this route to return comment data.
+
 module.exports = router;

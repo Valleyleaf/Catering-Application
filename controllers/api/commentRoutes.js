@@ -2,11 +2,6 @@ const router = require('express').Router();
 const { json } = require('express');
 const {Comment} = require('../../models');
 
-
-// req.session.user_id = userData.id;
-//       req.session.logged_in = true;
-//       req.session.name = userData.name;
-
 router.post('/', async (req, res) => {
   try {
     const userInfoString = `{

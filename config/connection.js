@@ -1,16 +1,16 @@
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
-console.log('testing', process.env.DB_NAME)
+
 let sequelize;
 if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
   console.log('notJawsDB')
   sequelize = new Sequelize(
-    'user_db',
-    'root',
-    '2524',
+    process.env.DB_USER,
+    process.env.DB_NAME,
+    process.env.DB_PASSWORD,
     {
       host: 'localhost',
       dialect: 'mysql',
@@ -19,5 +19,3 @@ if (process.env.JAWSDB_URL) {
   );
 }
 module.exports = sequelize;
-
-// Basic connections file for env usage. Keep this.

@@ -13,18 +13,13 @@ router.get('/', async (req, res) => {
   try {
     const data = await Restaurants.findAll()
     const rests = data.map((rest) => rest.get({plain: true}))
-    //firstRest:rests[0] could be use
     res.render('homepage' , {
         rests,
         logged_in: req.session.logged_in});
-    // console.log(rests)
   }catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
-
-
-  // res.render('homepage');
 });
 
 
@@ -33,9 +28,7 @@ router.get('/package' , async (req,res) => {
   try{
     const data = await Restaurants.findAll()
     const rests = data.map((rest) => rest.get({plain: true}))
-    //firstRest:rests[0] could be use
     res.render('homepage' , {rests } );
-    // console.log(rests)
   }catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -49,14 +42,18 @@ router.get('/package/:id' , async (req,res) => {
     const revData = await Comment.findAll({ where: { package_id: req.params.id } });
     const userData = req.session.user_id;
     const user = await User.findByPk(userData)
-    const name = user.name;
+    if (!req.session.logged_in) {
+      const name = "user"
+    } else {
+      const name = user.name
+    }
 
    
     const revs = revData.map((rev) => rev.get({plain:true}))
     const rest = data.get({plain:true});
 
 
-    res.render('package' , {rest: rest , revs:revs, name :req.session.name} );
+    res.render('package' , {rest: rest , revs:revs, name :this.name} );
   }catch (err) {
     console.log(err);
     res.status(500).json(err);

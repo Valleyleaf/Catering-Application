@@ -50,3 +50,27 @@ const review = async (event) => {
     document
     .querySelector('.review-form')
     .addEventListener('submit', review);
+
+
+
+    const addToCart = async (event) => {
+
+            const packageEle = event.target.closest('.package')
+
+            const packageName = document.getElementById('rest-name').textContent
+
+            const packageId = packageEle.getAttribute('id');
+
+           const response = await fetch('/api/booking', {
+             method: 'POST',
+             body: JSON.stringify({packageId,packageName}),
+             headers: { 'Content-Type': 'application/json' },
+             
+           })
+        };
+     
+     
+         document
+         .querySelector('#add-to-cart')
+         .addEventListener('click', addToCart)
+     

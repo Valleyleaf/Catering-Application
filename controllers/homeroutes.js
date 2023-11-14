@@ -35,20 +35,25 @@ router.get('/package' , async (req,res) => {
   }
 })
 
+
 router.get('/package/:id' , async (req,res) => {
   try{
     const data = await Restaurants.findByPk(req.params.id)
     const revData = await Comment.findAll({ where: { package_id: req.params.id } });
     const userData = req.session.user_id;
     const user = await User.findByPk(userData)
-    const name = user.name;
+    if (!req.session.logged_in) {
+      const name = "user"
+    } else {
+      const name = user.name
+    }
 
    
     const revs = revData.map((rev) => rev.get({plain:true}))
     const rest = data.get({plain:true});
 
 
-    res.render('package' , {rest: rest , revs:revs, name :req.session.name} );
+    res.render('package' , {rest: rest , revs:revs, name :this.name} );
   }catch (err) {
     console.log(err);
     res.status(500).json(err);

@@ -14,22 +14,22 @@ router.get('/', async (req, res) => {
 });
 
 
+
 router.post('/', async (req, res) => {
   try {
     const cartInfoString = `{
-      "user_id":${req.session.user_id},
-      "user_name":"${req.session.name}",
-      "package_id":${req.body.package_id},
-      "package_name":"${req.body.package_name}"
-      "order_id:"${generateid()}"
-      "date":${req.body.userInputDate},
-  }`
-
+      "user_id": ${req.session.user_id},
+      "user_name": "${req.session.name}",
+      "package_id": ${req.body.packageId},
+      "package_name": "${req.body.packageName}",
+      "order_id": "${generateid()}"
+    }`;
+console.log('before trigger',cartInfoString)
 const userJson = JSON.parse(cartInfoString);
-  console.log(cartInfoString);
+  console.log('did we trigger this',userJson);
   const cartData = await Booking.create(userJson); 
 
-    
+    //We need to figure out the bookingID;
     if (!cartData) {
       return res.status(404).json({ message: 'cart data not found' });
     }

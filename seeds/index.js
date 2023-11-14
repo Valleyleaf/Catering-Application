@@ -18,8 +18,8 @@ const seedAll = async() => {
     await seedRestaurants();
     console.log('\n----------------Restuarants seeded ---------------\n');
 
-    await seedBookings();
-    console.log('\n----------------Bookings seeded ---------------\n');
+    // await seedBookings();
+    // console.log('\n----------------Bookings seeded ---------------\n');  This seed bookings does not work, not done correctly
 
     // await menuSeed();
     // console.log('\n----------------menu seeded ---------------\n');

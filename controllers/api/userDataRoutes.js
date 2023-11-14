@@ -15,7 +15,7 @@ router.post("/login", async (req, res) => {
     if (!userData) {
       return res.status(404).json({ message: "user data not found" });
     }
-    const validPassword = await userData.checkPassword(req.body.password);
+    const validPassword = userData.checkPassword(req.body.password);
 
     if (!validPassword) {
       res
@@ -33,6 +33,7 @@ router.post("/login", async (req, res) => {
     });
   } catch (err) {
     res.status(400).json(err);
+    console.log("its here")
   }
 });
 

@@ -43,19 +43,22 @@ router.get('/package/:id' , async (req,res) => {
     const userData = req.session.user_id;
     const user = await User.findByPk(userData)
     let name;
-      
-      if (!req.session.logged_in) {
+
+    if (req.session.logged_in) {
+      console.log("logged in")
+      name = req.session.name
+    }else {
+      console.log("not logged in")
       name = "user"
-    } else {
-        name = user.name
     }
 
-   
+    
+
     const revs = revData.map((rev) => rev.get({plain:true}))
     const rest = data.get({plain:true});
 
 
-    res.render('package' , {rest: rest , revs:revs, name :name} );
+    res.render('package' , {rest: rest , revs:revs, name:name} );
   }catch (err) {
     console.log(err);
     res.status(500).json(err);
